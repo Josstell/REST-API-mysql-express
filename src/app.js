@@ -1,12 +1,12 @@
 import express from "express"
-import { pool } from "./db/db.js"
+import employeesRoutes from "./routes/employes.routes.js"
+import imdexRoutes from "./routes/index.routes.js"
 
 const app = express()
 
-app.get("/ping", async (req, res) => {
-	const [result] = await pool.query('SELECT "pong" as result')
-	res.json(result[0])
-})
+app.use(imdexRoutes)
+
+app.use(employeesRoutes)
 
 app.listen(4000)
 
