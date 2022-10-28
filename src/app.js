@@ -10,6 +10,10 @@ app.use(imdexRoutes)
 
 app.use("/api", employeesRoutes)
 
+app.use((req, res, next) => {
+	res.status(404).json({ message: "endpoint not found" })
+})
+
 app.listen(4000)
 
 console.log("server on port 4000")
