@@ -18,4 +18,4 @@ app.use((req, res, next) => {
 
 app.listen(PORT)
 
-console.log("server on port " + PORT)
+console.log("Server on port " + PORT)
